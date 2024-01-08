@@ -36,10 +36,9 @@ public class AreaCheckerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Date start = new Date();
         String requestBody = readRequest(request);
-//        System.out.println(requestBody);
-        Float x = parseParam(requestBody.toString(), "x");
-        Float y = parseParam(requestBody.toString(), "y");
-        Float r = parseParam(requestBody.toString(), "r");
+        Float x = parseParam(requestBody, "x");
+        Float y = parseParam(requestBody, "y");
+        Float r = parseParam(requestBody, "r");
         if (x != null && y != null && r != null) {
             ServletContext servletContext = getServletContext();
             ArrayList<Point> points = (ArrayList<Point>) servletContext.getAttribute("points");
@@ -53,11 +52,11 @@ public class AreaCheckerServlet extends HttpServlet {
             case FIRST:
                 return false;
             case SECOND:
-                return y < r - x;
+                return y < r + x;
             case THIRD:
                 return x * x + y * y < (r / 2) * (r / 2);
             case FOURTH:
-                return x < r && y < r / 2;
+                return x < r && -y < r / 2;
         }
         return false;
     }
