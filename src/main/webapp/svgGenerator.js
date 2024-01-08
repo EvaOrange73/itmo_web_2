@@ -7,7 +7,7 @@ export function svg(r){
 }
 
 export function dot(x, y){
-    draw.circle(3).dx(x).dy(y);
+    draw.circle(3).dx(x - 1).dy(y - 1);
 }
 
 function draw_axes(){

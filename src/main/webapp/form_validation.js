@@ -1,31 +1,33 @@
-import { svg, dot } from "./svgGenerator.js"
+import { svg, dot } from "./svgGenerator.js";
 
-svg(0)
+svg(0);
 
-const x = document.getElementById('x')
-const xError = document.getElementById('xError')
+const x = document.getElementById('x');
+const xError = document.getElementById('xError');
 
-const y = document.getElementById('y')
-const yError = document.getElementById('yError')
+const y = document.getElementById('y');
+const yError = document.getElementById('yError');
 
-const buttons = document.getElementsByName('r')
-const rError = document.getElementById('rError')
+const buttons = document.getElementsByName('r');
+const rError = document.getElementById('rError');
 
-let rValue = null
+let rValue = null;
 
 async function submit() {
 
-    const xValue = x.value.replaceAll(",", ".")
-    const yValue = y.value.replaceAll(",", ".")
-    const xStatus = checkXY(xValue, xError)
-    const yStatus = checkXY(yValue, yError)
-    const rStatus = checkButtons()
+    const xValue = x.value.replaceAll(",", ".");
+    const yValue = y.value.replaceAll(",", ".");
+    const xStatus = checkXY(xValue, xError);
+    const yStatus = checkXY(yValue, yError);
+    const rStatus = checkButtons();
 
     if (xStatus && yStatus && rStatus) {
-        let point = new FormData()
-        point.append('x', xValue)
-        point.append('y', yValue)
-        point.append('r', rValue)
+        dot(xValue * 30 + 150, yValue* 30 + 150);
+
+        let point = new FormData();
+        point.append('x', xValue);
+        point.append('y', yValue);
+        point.append('r', rValue);
 
         await fetch('controller', {
             method: 'POST',
@@ -40,34 +42,34 @@ async function submit() {
 
 function checkXY(value, error) {
     if (!(value)) {
-        error.textContent = "Поле не может быть пустым"
-        return false
+        error.textContent = "Поле не может быть пустым";
+        return false;
     } else {
         if (isNaN(value) || value <= -5 || value >= 5) {
-            error.textContent = "Введите число от -5 до 5"
-            return false
+            error.textContent = "Введите число от -5 до 5";
+            return false;
         } else {
-            error.textContent = ""
-            return true
+            error.textContent = "";
+            return true;
         }
     }
 }
 
 function setR(button) {
     for (let b of buttons){
-        b.classList.remove("clicked")
+        b.classList.remove("clicked");
     }
-    button.classList.add("clicked")
-    rValue = parseFloat(button.value)
+    button.classList.add("clicked");
+    rValue = parseFloat(button.value);
     svg(rValue);
 }
 
 function checkButtons() {
     if (rValue == null) {
-        rError.textContent = "Выберите радиус области"
+        rError.textContent = "Выберите радиус области";
         return false;
     }
-    rError.textContent = ""
+    rError.textContent = "";
     return true;
 }
 
@@ -81,6 +83,6 @@ function drawDot(e){
     submit();
 }
 
-window.setR = setR
-window.submit = submit
-window.drawDot = drawDot
+window.setR = setR;
+window.submit = submit;
+window.drawDot = drawDot;

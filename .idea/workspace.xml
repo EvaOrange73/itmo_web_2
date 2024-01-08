@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4e4491b-01aa-4dc2-b4d2-af1656d4f7c0" name="Changes" comment="v1">
+    <list default="true" id="b4e4491b-01aa-4dc2-b4d2-af1656d4f7c0" name="Changes" comment="fix area">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/form_validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/form_validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/svgGenerator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/svgGenerator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,12 +221,30 @@
       <option name="project" value="LOCAL" />
       <updated>1704708851430</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix innerHTML">
+      <option name="closed" value="true" />
+      <created>1704716979567</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704716979567</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix area">
+      <option name="closed" value="true" />
+      <created>1704717350748</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1704717350748</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="v1" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1" />
+    <MESSAGE value="fix innerHTML" />
+    <MESSAGE value="fix area" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix area" />
   </component>
 </project>
