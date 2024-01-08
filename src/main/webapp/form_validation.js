@@ -22,7 +22,7 @@ async function submit() {
     const rStatus = checkButtons();
 
     if (xStatus && yStatus && rStatus) {
-        dot(xValue * 30 + 150, yValue* 30 + 150);
+        dot(xValue * 30 + 150, -yValue * 30 + 150);
 
         let point = new FormData();
         point.append('x', xValue);
@@ -79,7 +79,6 @@ function drawDot(e){
     let clickedY = e.clientY - rect.top;
     x.value = (clickedX / 30 - 5).toFixed(2);
     y.value = (5 - clickedY / 30).toFixed(2);
-    dot(clickedX, clickedY);
     submit();
 }
 
