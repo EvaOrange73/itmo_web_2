@@ -34,8 +34,7 @@ async function submit() {
 
         let response = await fetch('table.jsp', {method : 'GET'});
         let tableText = await response.text();
-        document.querySelector("#table-container").innerHtml = tableText;
-        alert(document.querySelector("#table-container"))
+        document.querySelector("#table-container").innerHTML = tableText;
     }
 }
 
